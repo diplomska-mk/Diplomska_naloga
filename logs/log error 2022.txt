@@ -1,0 +1,900 @@
+
+2023-06-08-141420 TheGuard; 
+2023-06-08-141916 TheGuard; 
+2023-06-08-142123 TheGuard; 
+2023-06-08-143634 TheGuard; 
+2023-06-08-143739 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+Insertion problem _ 2023-06-08-143739: 960 https://www.theguardian.com/world/ng-interactive/2021/sep/02/covid-19-coronavirus-us-map-latest-cases-state-by-state 13
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:52)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3937)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2162)
+	at com.microsoft.sqlserver.jdbc.TDSReader.readPacket(IOBuffer.java:6840)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.startResponse(IOBuffer.java:8085)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:618)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:53)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:477)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2151)
+	... 12 more
+
+2023-06-09-073250 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3937)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2162)
+	at com.microsoft.sqlserver.jdbc.TDSReader.readPacket(IOBuffer.java:6840)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.startResponse(IOBuffer.java:8085)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:618)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:477)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2151)
+	... 12 more
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+2023-06-09-103924 TheGuard; 
+2023-06-09-161749 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3937)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2162)
+	at com.microsoft.sqlserver.jdbc.TDSReader.readPacket(IOBuffer.java:6840)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.startResponse(IOBuffer.java:8085)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:618)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:477)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2151)
+	... 12 more
+
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+
+Insertion problem _ 2023-06-09-161749: 5786 https://www.theguardian.com/sport/2022/feb/08/winter-olympics-beijing-2022-daily-briefing-five 14
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+
+Insertion problem _ 2023-06-09-161749: 5911 https://www.theguardian.com/sport/2022/feb/13/winter-olympics-beijing-2022-daily-briefing-ten 14
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+
+Insertion problem _ 2023-06-09-161749: 5964 https://www.theguardian.com/sport/2022/feb/16/winter-olympics-beijing-2022-daily-briefing-13 14
+com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3937)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2162)
+	at com.microsoft.sqlserver.jdbc.TDSReader.readPacket(IOBuffer.java:6840)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.startResponse(IOBuffer.java:8085)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:618)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:477)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2151)
+	... 12 more
+
+com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3937)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2162)
+	at com.microsoft.sqlserver.jdbc.TDSReader.readPacket(IOBuffer.java:6840)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.startResponse(IOBuffer.java:8085)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:618)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:477)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2151)
+	... 12 more
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+2023-06-10-102514 TheGuard; 
+2023-06-10-191305 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Permission denied: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Permission denied: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:50)
+
+Insertion problem _ 2023-06-10-191305: 11251 https://www.theguardian.com/business/live/2022/mar/07/markets-slide-surging-oil-price-stagflation-ftse-russia-sanctions-business-live 18
+2023-06-11-160518 TheGuard; 
+2023-06-11-184947 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:50)
+
+Insertion problem _ 2023-06-11-184947: 12513 https://www.theguardian.com/business/live/2022/mar/07/markets-slide-surging-oil-price-stagflation-ftse-russia-sanctions-business-live 18
+2023-06-11-215743 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:50)
+
+Insertion problem _ 2023-06-11-215743: 12594 https://www.theguardian.com/business/live/2022/mar/07/markets-slide-surging-oil-price-stagflation-ftse-russia-sanctions-business-live 18
+2023-06-11-234010 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+
+Insertion problem _ 2023-06-11-234010: 14536 https://www.theguardian.com/sport/live/2022/apr/28/nfl-draft-picks-first-round-order-analysis 14
+2023-06-12-104553 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3937)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2162)
+	at com.microsoft.sqlserver.jdbc.TDSReader.readPacket(IOBuffer.java:6840)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.startResponse(IOBuffer.java:8085)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:618)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:477)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2151)
+	... 12 more
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "No route to host: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+2023-06-12-130706 TheGuard; 
+2023-06-12-162612 TheGuard; 
+2023-06-12-171236 TheGuard; 
+2023-06-12-171317 TheGuard; 
+2023-06-12-191722 TheGuard; 
+2023-06-12-202430 TheGuard; 
+2023-06-12-215205 TheGuard; 
+2023-06-13-094150 TheGuard; 
+2023-06-13-094325 TheGuard; 
+2023-06-13-112436 TheGuard; 
+2023-06-14-101250 TheGuard; 
+2023-06-14-123017 TheGuard; 
+2023-06-14-123109 TheGuard; 
+2023-06-14-134003 TheGuard; 
+2023-06-14-141508 TheGuard; 
+2023-06-14-161313 TheGuard; 
+2023-06-14-195634 TheGuard; 
+2023-06-15-004113 TheGuard; 
+2023-06-15-102724 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Permission denied: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+
+2023-06-15-113046 TheGuard; 
+2023-06-15-113053 TheGuard; 
+2023-06-15-113140 TheGuard; 
+2023-06-15-113205 TheGuard; 
+2023-06-15-113258 TheGuard; 
+2023-06-15-113312 TheGuard; 
+2023-06-15-113322 TheGuard; 
+2023-06-15-124112 TheGuard; 
+2023-06-15-143350 TheGuard; 
+2023-06-15-143358 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:47)
+
+Insertion problem _ 2023-06-15-143358: 19077 https://www.theguardian.com/football/2022/may/25/which-football-clubs-have-won-the-league-title-in-their-centenary-year 15
+2023-06-15-180914 TheGuard; 
+2023-06-15-180922 TheGuard; 
+2023-06-16-131744 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+Insertion problem _ 2023-06-16-131744: 21671 https://www.theguardian.com/world/2022/jun/09/dom-phillips-editors-around-world-urge-bolsonaro-to-do-more-to-find-missing-journalist 13
+2023-06-17-100416 TheGuard; 
+2023-06-17-112717 TheGuard; 
+2023-06-17-122833 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3937)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2162)
+	at com.microsoft.sqlserver.jdbc.TDSReader.readPacket(IOBuffer.java:6840)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.startResponse(IOBuffer.java:8085)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:618)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:477)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1193)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1179)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.read(IOBuffer.java:2151)
+	... 12 more
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Connect timed out. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.articleNotInDB(DBConnection.java:51)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:142)
+	at DownloadPageArch.main(DownloadPageArch.java:46)
+
+2023-06-17-125856 TheGuard; 
+2023-06-17-131443 TheGuard; 
+2023-06-17-141055 TheGuard; 
+2023-06-17-141115 TheGuard; 
+2023-06-17-161159 TheGuard; 
+2023-06-17-182430 TheGuard; 
+2023-06-17-191502 TheGuard; 
+2023-06-17-235148 TheGuard; 
+2023-06-18-023957 TheGuard; 
+2023-06-18-082201 TheGuard; 
+2023-06-18-082313 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:51)
+
+Insertion problem _ 2023-06-18-082313: 24473 https://www.theguardian.com/lifeandstyle/2022/jun/11/50-best-summer-dresses-to-buy-rent-or-thrift 19
+2023-06-18-125713 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:51)
+
+Insertion problem _ 2023-06-18-125713: 24615 https://www.theguardian.com/lifeandstyle/2022/jun/11/50-best-summer-dresses-to-buy-rent-or-thrift 19
+2023-06-18-143656 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:51)
+
+Insertion problem _ 2023-06-18-143656: 24676 https://www.theguardian.com/lifeandstyle/2022/jun/11/50-best-summer-dresses-to-buy-rent-or-thrift 19
+2023-06-18-144840 TheGuard; 
+2023-06-18-145517 TheGuard; 
+2023-06-18-204359 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host 212.235.190.204, port 1433 has failed. Error: "Permission denied: connect. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2574)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:715)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3427)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at DBConnection.updateArticleEndDate(DBConnection.java:82)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:167)
+	at DownloadPageArch.main(DownloadPageArch.java:53)
+
+2023-06-18-224359 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:45)
+
+Insertion problem _ 2023-06-18-224359: 25297 https://www.theguardian.com/world/2022/jun/09/dom-phillips-editors-around-world-urge-bolsonaro-to-do-more-to-find-missing-journalist 13
+2023-06-18-230942 TheGuard; 
+com.microsoft.sqlserver.jdbc.SQLServerException: Error converting data type int to tinyint.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1695)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:620)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:539)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:246)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:516)
+	at DBConnection.addArticle2DB(DBConnection.java:230)
+	at DownloadPageArch.processCategory(DownloadPageArch.java:162)
+	at DownloadPageArch.main(DownloadPageArch.java:51)
+
+Insertion problem _ 2023-06-18-230942: 25318 https://www.theguardian.com/lifeandstyle/2022/jun/11/50-best-summer-dresses-to-buy-rent-or-thrift 19

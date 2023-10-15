@@ -1,0 +1,38 @@
+Prerequirements:
+
+1. Install JDBC driver from Microsoft:
+	https://docs.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server
+ 
+2. Install HTML cleaner:
+ 	http://htmlcleaner.sourceforge.net/download.php
+ 	
+3. Install JSOUP HTML parser:
+	https://jsoup.org/download
+	
+4. For all (1)-(3) add .jar files to the java path
+
+5. For all (1)-(3) add .jar as external jars in the build path of the project 
+
+6. Is not existing, create SourceData/The Conv folder in the workspace
+
+
+Working principle:
+
+DownloadPage.java main function is the main function of the project.
+An example news portal is The Conversation (https://theconversation.com/uk) and has a defined enum 
+For a defined category (must be in CategoriesTheConversation enum), the main function of the DownloadPage.java
+gets all articles and locally saves the source .xml files. The only for loop then parses each .xml file and 
+returns article content. The parsed article content is also saved locally.
+To use for a different news portal a new enum must be defined foloowing the structure of CategoriesTheConversation.
+Comments/function calls for functions that should be added are provided in the for loop.
+
+DataBaseConnection.java provides for examples on how to establish a connection with the database, execute a query 
+and a stored procedure without output parameters.
+
+Good luck ;)  	
+
+
+
+String Name = "Janez";
+String Surname = "Novak'); DROP TABLE Test2; SELECT ('1";
+String sql = "INSERT INTO Test (Name, Surname) VALUES('" + Name + "','" + Surname +"')";
