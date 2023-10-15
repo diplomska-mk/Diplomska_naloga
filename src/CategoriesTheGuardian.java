@@ -3,22 +3,22 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public enum CategoriesTheGuardian {
-	UK ("/uk-news", "UK", 12),													// BOLJ NE KOT JA (DOBI XML, A V VEČINI PRIMEROV NE OBDELUJE)
-	WORLD ("/world", "WORLD", 13),												// BOLJ NE KOT JA (DOBI XML, A V VEČINI PRIMEROV NE OBDELUJE)
-	SPORT ("/uk/sport", "SPORT", 14),											// DELUJE
-	FOOTBALL ("/football", "FOOTBALL", 15),										// DELUJE
-	OPINION ("/uk/commentisfree", "OPINION", 16),								// DOBI XML, NE DELUJE
-	CULTURE ("/uk/culture", "CULTURE", 17),										// DOBI XML, NE DELUJE
-	BUSINESS ("/uk/business", "BUSINESS", 18),									// DOBI XML, NE DELUJE
-	LIFESTYLE ("/uk/lifeandstyle", "LIFESTYLE", 19),							// DELUJE, OBČASNE TEŽAVE PRI KRIŽANKAH
-	FASHION ("/fashion", "FASHION", 20),										// DOBI XML, NE DELUJE
-	ENVIRONMENT ("/uk/environment", "ENVIRONMENT", 21),							// DELUJE
-	TECH ("/uk/technology", "TECH", 22),										// DOBI XML, NE DELUJE
-	TRAVEL ("/uk/travel", "TRAVEL", 23),										// DELUJE
-	SCIENCE ("/science", "SCIENCE", 25),										// DOBI XML, NE DELUJE
-	CITIES ("/uk/cities", "CITIES", 26), 										// NE OBSTAJA VEČ
-	GLOBALDEVELOPMENT ("/global-development", "GLOBAL-DEVELOPMENT", 27),		// DELUJE
-	OBITUARIES ("/tone/obituaries", "OBITUARIES", 28);							// DELUJE
+	UK ("/uk-news", "UK", 12),
+	WORLD ("/world", "WORLD", 13),
+	SPORT ("/uk/sport", "SPORT", 14),
+	FOOTBALL ("/football", "FOOTBALL", 15),	
+	OPINION ("/uk/commentisfree", "OPINION", 16),
+	CULTURE ("/uk/culture", "CULTURE", 17),	
+	BUSINESS ("/uk/business", "BUSINESS", 18),
+	LIFESTYLE ("/uk/lifeandstyle", "LIFESTYLE", 19),
+	FASHION ("/fashion", "FASHION", 20),
+	ENVIRONMENT ("/uk/environment", "ENVIRONMENT", 21),
+	TECH ("/uk/technology", "TECH", 22),
+	TRAVEL ("/uk/travel", "TRAVEL", 23),
+	SCIENCE ("/science", "SCIENCE", 25),
+	CITIES ("/uk/cities", "CITIES", 26), 			// NE OBSTAJA VEČ
+	GLOBALDEVELOPMENT ("/global-development", "GLOBAL-DEVELOPMENT", 27),
+	OBITUARIES ("/tone/obituaries", "OBITUARIES", 28);
 	
 	//private int value; 
 	private String relativeLink; private String name; private int sourceCategoryIDinDB;
